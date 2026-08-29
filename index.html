@@ -398,7 +398,208 @@ flex-direction: column;
       }
     }
 
-  </style>
+ 
+  
+  /* =========================================================
+   PASSEIOS — CARDS PREMIUM
+   Desktop 4 colunas | Tablet 2 | Mobile 1
+   ========================================================= */
+
+#passeios .services {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    align-items: stretch;
+    margin-top: 32px;
+}
+
+#passeios .services .tour-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid rgba(23, 23, 23, 0.08);
+    border-radius: 20px;
+    box-shadow: 0 8px 28px rgba(23, 23, 23, 0.08);
+    color: #171717;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+#passeios .services .tour-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(7, 59, 76, 0.18);
+    box-shadow: 0 18px 42px rgba(23, 23, 23, 0.14);
+}
+
+#passeios .tour-card-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: #f3f3f3;
+}
+
+#passeios .tour-card-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.55s ease;
+}
+
+#passeios .tour-card:hover .tour-card-image img {
+    transform: scale(1.055);
+}
+
+#passeios .tour-card-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.02) 45%,
+        rgba(0, 0, 0, 0.28) 100%
+    );
+    pointer-events: none;
+}
+
+#passeios .tour-card-badge {
+    position: absolute;
+    left: 14px;
+    bottom: 14px;
+    z-index: 2;
+    padding: 7px 11px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.94);
+    color: #073B4C;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(8px);
+}
+
+#passeios .tour-card-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 20px 20px 18px;
+}
+
+#passeios .tour-card-content h3 {
+    margin: 0 0 9px;
+    color: #171717;
+    font-size: 21px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+#passeios .tour-card-content p {
+    margin: 0 0 20px;
+    color: #5b5b5b;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+#passeios .tour-card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: auto;
+    color: #073B4C;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+#passeios .tour-card-cta span {
+    display: inline-block;
+    transition: transform 0.25s ease;
+}
+
+#passeios .tour-card:hover .tour-card-cta span {
+    transform: translateX(4px);
+}
+
+#passeios .tour-card:focus-visible {
+    outline: 3px solid #35C6D0;
+    outline-offset: 4px;
+}
+
+
+/* TABLET */
+@media (max-width: 1024px) {
+    #passeios .services {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    #passeios .tour-card-image {
+        aspect-ratio: 16 / 9;
+    }
+}
+
+
+/* MOBILE */
+@media (max-width: 640px) {
+    #passeios .services {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin-top: 24px;
+    }
+
+    #passeios .services .tour-card {
+        border-radius: 18px;
+    }
+
+    #passeios .tour-card-image {
+        aspect-ratio: 16 / 10;
+    }
+
+    #passeios .tour-card-content {
+        padding: 18px;
+    }
+
+    #passeios .tour-card-content h3 {
+        font-size: 20px;
+    }
+
+    #passeios .tour-card-content p {
+        font-size: 15px;
+        margin-bottom: 16px;
+    }
+
+    #passeios .tour-card-cta {
+        min-height: 44px;
+        align-items: center;
+    }
+}
+
+
+/* Respeita usuários que preferem menos animação */
+@media (prefers-reduced-motion: reduce) {
+    #passeios .services .tour-card,
+    #passeios .tour-card-image img,
+    #passeios .tour-card-cta span {
+        transition: none;
+    }
+
+    #passeios .services .tour-card:hover {
+        transform: none;
+    }
+
+    #passeios .tour-card:hover .tour-card-image img {
+        transform: none;
+    }
+}</style>
 </head>
 
 <body>
@@ -636,30 +837,61 @@ flex-direction: column;
 
     <div class="services">
 
-      <div class="service" onclick="location.href='#roteiros-buggy'" style="cursor:pointer;">
-        <div class="service-icon">🏖️</div>
-        <h3>Buggy</h3>
-        <p>Viva a experiência clássica de Jericoacoara e descubra os principais roteiros da região.</p>
-      </div>
+     <a class="service tour-card" href="#roteiros-buggy" aria-label="Ver passeio de Buggy em Jericoacoara">
+    <div class="tour-card-image">
+        <img src="buggy.jpg" alt="Passeio de Buggy em Jericoacoara" loading="lazy">
+        <span class="tour-card-badge">Clássico de Jeri</span>
+    </div>
+    <div class="tour-card-content">
+        <h3 data-i18n="tour_buggy_title">Buggy</h3>
+        <p data-i18n="tour_buggy_description">
+            Viva a experiência clássica de Jericoacoara e descubra cenários inesquecíveis entre dunas e lagoas.
+        </p>
+        <span class="tour-card-cta" data-i18n="tour_view">Ver passeio <span aria-hidden="true">→</span></span>
+    </div>
+</a>
 
-      <div class="service" onclick="location.href='#roteiros-quadriciclo'" style="cursor:pointer;">
-        <div class="service-icon">🏍️</div>
-        <h3>Quadriciclo</h3>
-        <p>Mais aventura e liberdade para explorar paisagens incríveis de Jericoacoara.</p>
-      </div>
+<a class="service tour-card" href="#roteiros-quadriciclo" aria-label="Ver passeio de Quadriciclo em Jericoacoara">
+    <div class="tour-card-image">
+        <img src="quadriciclo.jpg" alt="Passeio de Quadriciclo em Jericoacoara" loading="lazy">
+        <span class="tour-card-badge">Liberdade</span>
+    </div>
+    <div class="tour-card-content">
+        <h3 data-i18n="tour_quad_title">Quadriciclo</h3>
+        <p data-i18n="tour_quad_description">
+            Mais aventura e liberdade para explorar paisagens incríveis de Jericoacoara.
+        </p>
+        <span class="tour-card-cta" data-i18n="tour_view">Ver passeio <span aria-hidden="true">→</span></span>
+    </div>
+</a>
 
-      <div class="service" onclick="location.href='#roteiros-utv'" style="cursor:pointer;">
-    <div class="service-icon">🏎️</div>
-    <h3>UTV</h3>
-    <p>Potência, aventura e conforto para explorar as dunas e paisagens de Jericoacoara.</p>
-</div>
+<a class="service tour-card" href="#roteiros-utv" aria-label="Ver passeio de UTV em Jericoacoara">
+    <div class="tour-card-image">
+        <img src="utv.jpg" alt="Passeio de UTV pelas dunas de Jericoacoara" loading="lazy">
+        <span class="tour-card-badge">Aventura</span>
+    </div>
+    <div class="tour-card-content">
+        <h3 data-i18n="tour_utv_title">UTV</h3>
+        <p data-i18n="tour_utv_description">
+            Potência, aventura e conforto para explorar as dunas e paisagens de Jericoacoara.
+        </p>
+        <span class="tour-card-cta" data-i18n="tour_view">Ver passeio <span aria-hidden="true">→</span></span>
+    </div>
+</a>
 
-      <div class="service" onclick="location.href='#roteiros-4x4'" style="cursor:pointer;">
-        <div class="service-icon">🚙</div>
-        <h3>4x4</h3>
-        <p>Conforto e praticidade para conhecer Jeri com sua família, amigos ou em passeio privativo.</p>
-      </div>
-
+<a class="service tour-card" href="#roteiros-4x4" aria-label="Ver passeio de 4x4 em Jericoacoara">
+    <div class="tour-card-image">
+        <img src="4x4.jpg" alt="Passeio de 4x4 pelas dunas de Jericoacoara" loading="lazy">
+        <span class="tour-card-badge">Conforto</span>
+    </div>
+    <div class="tour-card-content">
+        <h3 data-i18n="tour_4x4_title">4x4</h3>
+        <p data-i18n="tour_4x4_description">
+            Conforto e praticidade para conhecer Jeri com família, amigos ou em passeio privativo.
+        </p>
+        <span class="tour-card-cta" data-i18n="tour_view">Ver passeio <span aria-hidden="true">→</span></span>
+    </div>
+</a>
     </div>
 
   </div>
