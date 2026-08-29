@@ -442,7 +442,7 @@ flex-direction: column;
 #passeios .tour-card-image {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 4 / 3;
     overflow: hidden;
     background: #f3f3f3;
 }
@@ -508,9 +508,9 @@ flex-direction: column;
 
 #passeios .tour-card-content {
     display: flex;
-    flex: 1;
+   flex: 0 0 auto;
     flex-direction: column;
-    padding: 20px 20px 18px;
+  padding: 16px 18px 14px;
 }
 
 #passeios .tour-card-content h3 {
@@ -526,7 +526,7 @@ flex-direction: column;
     color: #5b5b5b;
     font-size: 15px;
     line-height: 1.6;
-  min-height: 72px;
+  min-height: 36px;
 }
 
 #passeios .tour-card-cta {
@@ -876,10 +876,13 @@ flex-direction: column;
         <span class="tour-card-badge">Liberdade</span>
     </div>
     <div class="tour-card-content">
-        <p data-i18n="tour_quad_description">
+        
+      
+     <h3 data-i18n="tour_quad_title">Quadriciclo</h3>
+<p data-i18n="tour_quad_description">
     Liberdade para explorar Jeri de um jeito mais aventureiro.
 </p>
-        </p>
+    
         <span class="tour-card-cta" data-i18n="tour_view">Ver passeio <span aria-hidden="true">→</span></span>
     </div>
 </a>
