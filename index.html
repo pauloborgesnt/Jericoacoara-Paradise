@@ -408,7 +408,7 @@ flex-direction: column;
 #passeios .services {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 22px;
+    gap: 26px;
     align-items: stretch;
     margin-top: 32px;
 }
@@ -446,6 +446,24 @@ flex-direction: column;
     overflow: hidden;
     background: #f3f3f3;
 }
+
+/* Enquadramento individual das fotos */
+#passeios .tour-card:nth-child(1) .tour-card-image img {
+    object-position: center 58%;
+}
+
+#passeios .tour-card:nth-child(2) .tour-card-image img {
+    object-position: center 55%;
+}
+
+#passeios .tour-card:nth-child(3) .tour-card-image img {
+    object-position: center 52%;
+}
+
+#passeios .tour-card:nth-child(4) .tour-card-image img {
+    object-position: center 58%;
+}
+    
 
 #passeios .tour-card-image img {
     display: block;
@@ -504,10 +522,11 @@ flex-direction: column;
 }
 
 #passeios .tour-card-content p {
-    margin: 0 0 20px;
+    margin: 0 0 16px;
     color: #5b5b5b;
     font-size: 15px;
     line-height: 1.6;
+  min-height: 72px;
 }
 
 #passeios .tour-card-cta {
@@ -828,7 +847,7 @@ flex-direction: column;
 
     <div class="section-tag">PASSEIOS EM JERICOACOARA</div>
 
-    <h2>Escolha como você quer viver Jeri.</h2>
+    <h2>Viva Jeri do seu jeito.</h2>
 
     <p>
       Explore Jericoacoara e seus principais roteiros.
@@ -844,10 +863,10 @@ flex-direction: column;
     </div>
     <div class="tour-card-content">
         <h3 data-i18n="tour_buggy_title">Buggy</h3>
-        <p data-i18n="tour_buggy_description">
-            Viva a experiência clássica de Jericoacoara e descubra cenários inesquecíveis entre dunas e lagoas.
-        </p>
-        <span class="tour-card-cta" data-i18n="tour_view">Ver passeio <span aria-hidden="true">→</span></span>
+       <p data-i18n="tour_buggy_description">
+    O clássico de Jeri entre dunas, lagoas e paisagens inesquecíveis.
+</p>
+      <span class="tour-card-cta" data-i18n="tour_view">Ver passeio <span aria-hidden="true">→</span></span>
     </div>
 </a>
 
@@ -857,9 +876,9 @@ flex-direction: column;
         <span class="tour-card-badge">Liberdade</span>
     </div>
     <div class="tour-card-content">
-        <h3 data-i18n="tour_quad_title">Quadriciclo</h3>
         <p data-i18n="tour_quad_description">
-            Mais aventura e liberdade para explorar paisagens incríveis de Jericoacoara.
+    Liberdade para explorar Jeri de um jeito mais aventureiro.
+</p>
         </p>
         <span class="tour-card-cta" data-i18n="tour_view">Ver passeio <span aria-hidden="true">→</span></span>
     </div>
@@ -872,8 +891,9 @@ flex-direction: column;
     </div>
     <div class="tour-card-content">
         <h3 data-i18n="tour_utv_title">UTV</h3>
-        <p data-i18n="tour_utv_description">
-            Potência, aventura e conforto para explorar as dunas e paisagens de Jericoacoara.
+       <p data-i18n="tour_utv_description">
+    Potência e conforto para viver as dunas com mais emoção.
+</p>
         </p>
         <span class="tour-card-cta" data-i18n="tour_view">Ver passeio <span aria-hidden="true">→</span></span>
     </div>
@@ -886,10 +906,12 @@ flex-direction: column;
     </div>
     <div class="tour-card-content">
         <h3 data-i18n="tour_4x4_title">4x4</h3>
-        <p data-i18n="tour_4x4_description">
-            Conforto e praticidade para conhecer Jeri com família, amigos ou em passeio privativo.
-        </p>
-        <span class="tour-card-cta" data-i18n="tour_view">Ver passeio <span aria-hidden="true">→</span></span>
+
+<p data-i18n="tour_4x4_description">
+    Conforto para conhecer Jeri com família, amigos ou em passeio privativo.
+</p>
+
+<span class="tour-card-cta" data-i18n="tour_view">Ver passeio <span aria-hidden="true">→</span></span>
     </div>
 </a>
     </div>
