@@ -1066,7 +1066,7 @@ flex-direction: column;
         <div class="service-icon">🌅</div>
         <h3>UTV Sunset</h3>
         <p>Uma experiência especial de UTV no final da tarde para contemplar o pôr do sol.</p>
-        <a href="#reservar" class="btn">Ver passeio</a>
+        <a href="#experiencia-utv-sunset" class="btn">Ver experiência</a>
       </div>
 
       <div class="service">
@@ -1084,6 +1084,46 @@ flex-direction: column;
       </div>
 
     </div>
+
+  </div>
+</section>
+
+  <section id="experiencia-utv-sunset">
+  <div class="container">
+
+    <div class="section-tag">EXPERIÊNCIA PREMIUM</div>
+
+    <h2>UTV Sunset</h2>
+
+    <p>
+      Uma experiência especial de aproximadamente 2 horas nas Dunas de Barrinha,
+      no final da tarde, criada para contemplar o pôr do sol de Jericoacoara
+      com exclusividade, emoção e conforto.
+    </p>
+
+    <div class="services">
+
+      <div class="service">
+        <div class="service-icon">🌅</div>
+        <h3>Pôr do sol nas dunas</h3>
+        <p>Um roteiro pensado para viver um dos momentos mais marcantes de Jericoacoara.</p>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">⏱️</div>
+        <h3>Aproximadamente 2 horas</h3>
+        <p>Experiência no final da tarde com tempo planejado para aproveitar cada etapa do passeio.</p>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">⭐</div>
+        <h3>Experiência diferenciada</h3>
+        <p>Uma proposta premium para quem busca mais exclusividade, cenário e valor agregado.</p>
+      </div>
+
+    </div>
+
+    <a href="#reservar" class="btn">Consultar disponibilidade</a>
 
   </div>
 </section>
@@ -1173,5 +1213,39 @@ flex-direction: column;
 
 </footer>
 
-</body>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const utvButtons = document.querySelectorAll('#roteiros-utv .service .btn');
+
+    utvButtons.forEach(function (button) {
+
+        button.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            const card = button.closest(".service");
+            const titulo = card.querySelector("h3");
+
+            if (titulo) {
+                sessionStorage.setItem(
+                    "passeioUTVSelecionado",
+                    titulo.textContent.trim()
+                );
+            }
+
+            const reserva = document.querySelector("#reservar");
+
+            if (reserva) {
+                reserva.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            }
+        });
+
+    });
+
+});
+</script></body>
 </html>
