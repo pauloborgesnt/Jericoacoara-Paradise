@@ -935,7 +935,6 @@ flex-direction: column;
        <p data-i18n="tour_utv_description">
     Potência e conforto para viver as dunas com mais emoção.
 </p>
-        </p>
         <span class="tour-card-cta" data-i18n="tour_view">Ver passeio <span aria-hidden="true">→</span></span>
     </div>
 </a>
@@ -1237,7 +1236,7 @@ flex-direction: column;
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-    const utvButtons = document.querySelectorAll('#roteiros-utv .service .btn');
+    const utvButtons = document.querySelectorAll('#roteiros-utv .service .btn[href="#reservar"]');
 
     utvButtons.forEach(function (button) {
 
