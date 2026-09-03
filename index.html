@@ -646,35 +646,70 @@ flex-direction: column;
 }</style>
 
   <style>
-  /* Refinamento exclusivo do ícone UTV Sunset */
-  img[src="Assunto.png"] {
-    width: 78px !important;
-    height: auto !important;
-    max-width: none !important;
-    display: block !important;
-    margin: 0 0 20px 0 !important;
-    object-fit: contain !important;
+  /* Cards internos de roteiros — alinhamento e responsividade */
+  #roteiros-buggy .services,
+  #roteiros-quadriciclo .services,
+  #roteiros-utv .services,
+  #roteiros-4x4 .services {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: stretch;
   }
 
   .route-cta-card {
     display: flex;
     flex-direction: column;
+    min-width: 0;
+    height: 100%;
+    text-align: left;
+  }
+
+  .route-cta-card .service-icon {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 0 0 78px;
+    width: 78px;
+    height: 78px;
+    margin: 0 0 20px;
+  }
+
+  .route-cta-card .service-icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    object-fit: contain;
+    object-position: left center;
+  }
+
+  .route-cta-card h3,
+  .route-cta-card p {
     text-align: left;
   }
 
   .route-cta-card .btn {
     align-self: flex-start;
-    margin-top: 52px;
-    padding-left: 0;
+    margin-top: auto;
+    padding: 18px 0 0;
     transform: none;
   }
 
-  .litoral-leste-card .service-icon img {
-    width: 78px;
-    height: auto;
-    max-width: none;
-    margin: 0 0 20px 0;
-    object-fit: contain;
+  @media (max-width: 1024px) {
+    #roteiros-buggy .services,
+    #roteiros-quadriciclo .services,
+    #roteiros-utv .services,
+    #roteiros-4x4 .services {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    #roteiros-buggy .services,
+    #roteiros-quadriciclo .services,
+    #roteiros-utv .services,
+    #roteiros-4x4 .services {
+      grid-template-columns: minmax(0, 1fr);
+    }
   }
 </style>
 </head>
@@ -1004,7 +1039,7 @@ flex-direction: column;
       </div>
 
       <div class="service route-cta-card">
-        <div class="service-icon">🌊</div>
+        <div class="service-icon"><img src="icone-litoral-oeste.png" alt="Litoral Oeste" class="service-icon-img"></div>
         <h3>Litoral Oeste</h3>
         <p>
           Explore as paisagens, dunas e atrações do lado oeste de Jericoacoara.
@@ -1013,7 +1048,7 @@ flex-direction: column;
       </div>
 
       <div class="service route-cta-card">
-        <div class="service-icon">🌅</div>
+        <div class="service-icon"><img src="icone-barrinha.png" alt="Barrinha" class="service-icon-img"></div>
         <h3>Barrinha</h3>
         <p>
           Viva uma experiência especial pela região da Barrinha e seus cenários naturais.
@@ -1050,14 +1085,14 @@ flex-direction: column;
       </div>
 
       <div class="service route-cta-card">
-        <div class="service-icon">🌊</div>
+        <div class="service-icon"><img src="icone-litoral-oeste.png" alt="Litoral Oeste" class="service-icon-img"></div>
         <h3>Litoral Oeste</h3>
         <p>Conheça dunas, praias e paisagens incríveis do lado oeste de Jericoacoara.</p>
         <a href="#reservar" class="btn">Ver passeio</a>
       </div>
 
       <div class="service route-cta-card">
-    <div class="service-icon">🌅</div>
+    <div class="service-icon"><img src="icone-barrinha.png" alt="Barrinha" class="service-icon-img"></div>
     <h3>Barrinha</h3>
     <p>Viva uma experiência especial pela região da Barrinha de quadriciclo e descubra paisagens incríveis.</p>
     <a href="#reservar" class="btn">Ver passeio</a>
@@ -1089,14 +1124,14 @@ flex-direction: column;
       </div>
 
       <div class="service route-cta-card">
-        <div class="service-icon">🌊</div>
+        <div class="service-icon"><img src="icone-litoral-oeste.png" alt="Litoral Oeste" class="service-icon-img"></div>
         <h3>Litoral Oeste</h3>
         <p>Descubra dunas, praias e paisagens incríveis do litoral oeste de Jericoacoara.</p>
         <a href="#reservar" class="btn">Ver passeio</a>
       </div>
 
       <div class="service route-cta-card">
-        <div class="service-icon">🏜️</div>
+        <div class="service-icon"><img src="icone-barrinha.png" alt="Barrinha" class="service-icon-img"></div>
         <h3>Barrinha</h3>
         <p>Explore a região da Barrinha de UTV entre praias, dunas e paisagens inesquecíveis.</p>
         <a href="#reservar" class="btn">Ver passeio</a>
@@ -1110,7 +1145,7 @@ flex-direction: column;
       </div>
 
       <div class="service route-cta-card">
-        <div class="service-icon">⭐</div>
+        <div class="service-icon"><img src="icone-utv-privativo.png" alt="UTV Privativo" class="service-icon-img"></div>
         <h3>UTV Privativo</h3>
         <p>Uma experiência exclusiva para quem busca mais privacidade, conforto e liberdade.</p>
         <a href="#reservar" class="btn">Ver passeio</a>
@@ -1189,14 +1224,14 @@ flex-direction: column;
       </div>
 
       <div class="service route-cta-card">
-        <div class="service-icon">🌊</div>
+        <div class="service-icon"><img src="icone-litoral-oeste.png" alt="Litoral Oeste" class="service-icon-img"></div>
         <h3>Litoral Oeste</h3>
         <p>Explore dunas, praias e paisagens incríveis do lado oeste de Jericoacoara em 4x4.</p>
         <a href="#reservar" class="btn">Ver passeio</a>
       </div>
 
       <div class="service route-cta-card">
-        <div class="service-icon">🏜️</div>
+        <div class="service-icon"><img src="icone-barrinha.png" alt="Barrinha" class="service-icon-img"></div>
         <h3>Barrinha</h3>
         <p>Viva uma experiência especial pela região da Barrinha com conforto em veículo 4x4.</p>
         <a href="#reservar" class="btn">Ver passeio</a>
