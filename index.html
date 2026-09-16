@@ -636,13 +636,6 @@ flex-direction: column;
     #passeios .tour-card:hover .tour-card-image img {
         transform: none;
     }
-
-  .card.hospedagem {
-    background-image: url("/IMG_0927.jpg") !important;
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-}
 }</style>
 
   <style>
@@ -726,8 +719,8 @@ flex-direction: column;
 
     <div class="menu">
     <a href="#passeios">Passeios</a>
-    <a href="#hospedagens">Hospedagens</a>
-    <a href="#gastronomia">Gastronomia</a>
+    <a href="#reservar">Hospedagens</a>
+    <a href="#reservar">Gastronomia</a>
     <a href="#sobre">Sobre Jeri</a>
     <a class="reservar" href="#reservar">Planeje sua viagem</a>
 </div>
@@ -792,7 +785,7 @@ flex-direction: column;
 
     <div class="cards">
 
-      <a href="#hospedagens" class="card hospedagem">
+      <a href="#reservar" class="card hospedagem">
     <div class="card-content">
         <h3>Hospedagens</h3>
         <p>
@@ -812,7 +805,7 @@ flex-direction: column;
     </div>
 </a>
 
-<a href="#gastronomia" class="card gastronomia">
+<a href="#reservar" class="card gastronomia">
     <div class="card-content">
         <h3>Gastronomia</h3>
         <p>
@@ -1279,7 +1272,7 @@ flex-direction: column;
       pelo nosso portal.
     </p>
 
-    <a class="btn btn-primary" href="#">
+    <a class="btn btn-primary" href="https://wa.me/5562984182969" target="_blank" rel="noopener noreferrer">
       Quero conhecer Jeri
     </a>
 
@@ -1304,39 +1297,5 @@ flex-direction: column;
 
 </footer>
 
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    const utvButtons = document.querySelectorAll('#roteiros-utv .service .btn[href="#reservar"]');
-
-    utvButtons.forEach(function (button) {
-
-        button.addEventListener("click", function (event) {
-            event.preventDefault();
-
-            const card = button.closest(".service");
-            const titulo = card.querySelector("h3");
-
-            if (titulo) {
-                sessionStorage.setItem(
-                    "passeioUTVSelecionado",
-                    titulo.textContent.trim()
-                );
-            }
-
-            const reserva = document.querySelector("#reservar");
-
-            if (reserva) {
-                reserva.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-            }
-        });
-
-    });
-
-});
-</script></body>
+</body>
 </html>
